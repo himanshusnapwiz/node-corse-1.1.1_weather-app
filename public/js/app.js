@@ -26,7 +26,7 @@ const getWeatherInfo = (location) => {
             // console.log(data.location);
             // console.log(data.forcast);
             message1.textContent = data.location;
-            message2.textContent = data.forcast;
+            message2.innerHTML = data.forcast;
             
         });
     });

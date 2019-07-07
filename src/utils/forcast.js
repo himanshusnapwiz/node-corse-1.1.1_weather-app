@@ -10,7 +10,11 @@ const forcast = (latitude, longitude, callback) => {
             callback('Unable to connect to forcast network.', undefined);
         } else {
             const currently = response.body.currently;
-            callback(undefined, `${response.body.daily.data[0].summary} It is currently ${currently.temperature} degrees out. There is a ${currently.precipProbability}% chance of rain.`);
+            const daily = response.body.daily.data[0];
+            const result = `${daily.summary}<br/>
+                            It is currently ${currently.temperature} degrees out. The highest will be ${daily.temperatureHigh} with low as ${daily.temperatureLow}.<br/>
+                            There is a ${currently.precipProbability}% chance of rain.`
+            callback(undefined, result);
         }
     })
 }
