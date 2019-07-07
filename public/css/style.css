@@ -44,3 +44,7 @@ button {
     color: #ffffff;
     cursor: pointer;
 }
+
+img {
+    width: 300px;
+}
